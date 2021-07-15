@@ -6,7 +6,7 @@ function Register() {
     return (
         <Container>
             <Row className="flex-column my-5">
-                <div className="mb-5">
+                <div className="mb-5 pl-3">
                     <h1>Register</h1>
                     <h6>Start you fee trial</h6>
                 </div>
