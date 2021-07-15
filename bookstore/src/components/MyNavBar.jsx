@@ -1,4 +1,5 @@
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap'
+import { Link, withRouter } from 'react-router-dom'
 
 
 function MyNavBar(props) {
@@ -10,7 +11,10 @@ function MyNavBar(props) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link className="text-white" href="#home">Home</Nav.Link>
-                        <Nav.Link className="text-white" href="#link">About</Nav.Link>
+                        <Link to="/register" className={props.location.pathname === '/register'
+                            ? 'nav-link active'
+                            : 'nav-link'}>Register
+                        </Link>
                         <NavDropdown title="Browse" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -29,4 +33,4 @@ function MyNavBar(props) {
     )
 }
 
-export default MyNavBar
+export default withRouter(MyNavBar)
